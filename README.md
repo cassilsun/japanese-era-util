@@ -1,33 +1,45 @@
-```markdown
-# Japanese Era Util
+# Japanese Era Utility（日付元号変換ユーティリティ）
 
-日本の元号（令和、平成、昭和など）に変換するJavaユーティリティ。
+A lightweight Java utility to convert Gregorian dates into Japanese era (gengō) format.
 
-A lightweight Java utility for converting Gregorian dates to Japanese era names (e.g. 令和, 平成, 昭和).
-
----
-
-## ✨ Features
-
-- Convert `int` year, `LocalDate`, or `ZonedDateTime` to:
-    - `Era + Year` format: `"令和6"`
-    - `Year Only` format: `"6"`
+西暦日付を日本の元号（令和・平成・昭和など）に変換するための軽量Javaユーティリティです。
 
 ---
 
-## 🔧 Example Usage
+## 🌟 Features（特徴）
+
+- Supports conversion from `int` year, `LocalDate`, and `ZonedDateTime`.
+- Provides two formatting styles:
+    - **Era + Year**: `令和6`
+    - **Year Only**: `6`
+
+- `int`年、`LocalDate`、`ZonedDateTime`の各タイプから元号変換が可能。
+- 出力形式は以下の2種類をサポート：
+    - **元号＋年数**: `令和6`
+    - **年数のみ**: `6`
+
+---
+
+## 📌 Example Usage（使用例）
 
 ```java
+// From int year
 JapaneseEraUtil.getEraWithYear(2024);                      // → "令和6"
+
+// From LocalDate
 JapaneseEraUtil.getEraYearOnly(LocalDate.of(1989, 1, 8));  // → "64"
-JapaneseEraUtil.getEraWithYear(ZonedDateTime.now());       // → "令和7"
+
+// From ZonedDateTime
+JapaneseEraUtil.getEraWithYear(ZonedDateTime.now());       // → 現在の元号 (e.g., "令和7")
 ```
 
 ---
 
-## ▶️ Run Demo (Example.java)
+## 🚀 Running the Demo（デモの実行方法）
 
-To run the demo example class:
+Execute `Example.java` to see sample output:
+
+以下のコマンドでデモを実行できます：
 
 ```bash
 mvn compile exec:java -Dexec.mainClass="com.github.cassilsun.example.Example"
@@ -35,40 +47,25 @@ mvn compile exec:java -Dexec.mainClass="com.github.cassilsun.example.Example"
 
 ---
 
-## 📦 Build
+## 📦 Installation（導入方法）
 
-```bash
-mvn clean package
-```
+You can manually add the source code or use build tools like Maven.
 
----
-
-## ☁️ Use with JitPack
-
-### ① Add JitPack repository:
-
-```xml
-<repositories>
-  <repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-  </repository>
-</repositories>
-```
-
-### ② Add dependency:
-
-```xml
-<dependency>
-  <groupId>com.github.cassilsun</groupId>
-  <artifactId>japanese-era-util</artifactId>
-  <version>v1.0.0</version>
-</dependency>
-```
+ソースコードを手動で追加するか、Maven等のビルドツールを使用して導入できます。
 
 ---
 
-## 🪪 License
+## 💬 Contributions & Issues（貢献・問題報告）
 
-This project is open-sourced under the MIT License.  
-Feel free to modify or distribute with proper attribution.
+Feel free to submit issues or pull requests.
+
+バグ報告や改善提案、プルリクエストは大歓迎です。
+
+---
+
+## 📝 License（ライセンス）
+
+MIT © [Ryan Zhang]
+
+MITライセンスに基づき配布されています。
+
